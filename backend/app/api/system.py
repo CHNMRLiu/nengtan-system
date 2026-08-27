@@ -19,8 +19,11 @@ from app.schemas import (
 router = APIRouter()
 
 
-def success(data=None, message="操作成功"):
-    return ResponseModel(code=200, message=message, data=data)
+def success(data=None, message="操作成功", total=None):
+    result = {"code": 200, "message": message, "data": data}
+    if total is not None:
+        result["total"] = total
+    return result
 
 
 def error(message="操作失败", code=400):

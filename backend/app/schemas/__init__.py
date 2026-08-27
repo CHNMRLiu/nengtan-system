@@ -143,6 +143,7 @@ class ManualEntryCreate(BaseModel):
     entry_date: str
     consumption: float = 0
     unit_price: float = 0
+    data_source: str = "手工录入"
     recorder: str = ""
     remark: str = ""
 
