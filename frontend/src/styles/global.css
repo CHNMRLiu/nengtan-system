@@ -1,0 +1,263 @@
+/* ==================== Apple 风格全局样式 ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F7;
+  --bg-tertiary: #FAFAFA;
+  --text-primary: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary: #86868B;
+  --brand: #0071E3;
+  --brand-hover: #0077ED;
+  --brand-active: #006EDB;
+  --success: #34C759;
+  --warning: #FF9500;
+  --danger: #FF3B30;
+  --border: #D2D2D7;
+  --border-light: #E8E8ED;
+  --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-dialog: 0 8px 32px rgba(0,0,0,0.12);
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-input: 8px;
+  --radius-dialog: 16px;
+  --radius-table: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ==================== Element Plus 样式覆盖 ==================== */
+
+/* 按钮 */
+.el-button--primary {
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  border-radius: var(--radius-btn) !important;
+  height: 36px;
+  transition: all 0.2s ease;
+}
+.el-button--primary:hover {
+  background: var(--brand-hover) !important;
+  border-color: var(--brand-hover) !important;
+}
+.el-button--default {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-btn) !important;
+  height: 36px;
+}
+.el-button--default:hover {
+  background: var(--border-light) !important;
+  border-color: var(--border) !important;
+}
+.el-button--danger {
+  background: var(--danger) !important;
+  border-color: var(--danger) !important;
+  border-radius: var(--radius-btn) !important;
+}
+.el-button--small {
+  height: 28px !important;
+  font-size: 12px !important;
+}
+
+/* 输入框 */
+.el-input__wrapper {
+  border-radius: var(--radius-input) !important;
+  box-shadow: 0 0 0 1px var(--border) !important;
+}
+.el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--text-secondary) !important;
+}
+.el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.15), 0 0 0 1px var(--brand) !important;
+}
+.el-input__inner {
+  font-family: var(--font) !important;
+  font-size: 14px !important;
+  color: var(--text-primary) !important;
+}
+.el-input__inner::placeholder {
+  color: var(--text-tertiary) !important;
+}
+.el-select .el-input__wrapper {
+  border-radius: var(--radius-input) !important;
+}
+
+/* 表格 */
+.el-table {
+  border-radius: var(--radius-table) !important;
+  overflow: hidden;
+  font-size: 14px;
+}
+.el-table th.el-table__cell {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+.el-table td.el-table__cell {
+  border-bottom: 1px solid var(--border-light) !important;
+  color: var(--text-primary) !important;
+}
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background: #F0F0F5 !important;
+}
+.el-table .el-table__row:nth-child(even) > td {
+  background: var(--bg-tertiary) !important;
+}
+.el-table--border .el-table__inner-wrapper::after,
+.el-table--border::after,
+.el-table--border::before,
+.el-table__inner-wrapper::before {
+  display: none !important;
+}
+.el-table--border .el-table__cell {
+  border-right: none !important;
+}
+
+/* 弹窗 */
+.el-dialog {
+  border-radius: var(--radius-dialog) !important;
+  box-shadow: var(--shadow-dialog) !important;
+  overflow: hidden;
+}
+.el-dialog__header {
+  padding: 20px 24px 16px !important;
+  border-bottom: 1px solid var(--border-light);
+}
+.el-dialog__title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+.el-dialog__body {
+  padding: 20px 24px !important;
+}
+.el-dialog__footer {
+  padding: 12px 24px 20px !important;
+  border-top: 1px solid var(--border-light);
+}
+
+/* 表单 */
+.el-form-item__label {
+  font-size: 14px !important;
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+.el-textarea__inner {
+  border-radius: var(--radius-input) !important;
+  font-family: var(--font) !important;
+}
+
+/* 标签 */
+.el-tag {
+  border-radius: 980px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  padding: 0 10px !important;
+  font-size: 12px !important;
+  border: none !important;
+}
+.el-tag--success {
+  background: #E8F8EC !important;
+  color: #248A3D !important;
+}
+.el-tag--warning {
+  background: #FFF4E5 !important;
+  color: #B25E00 !important;
+}
+.el-tag--danger {
+  background: #FFEBE9 !important;
+  color: #C9342A !important;
+}
+.el-tag--info {
+  background: #E8F1FF !important;
+  color: #0051A8 !important;
+}
+
+/* 分页 */
+.el-pagination {
+  margin-top: 16px;
+  justify-content: flex-end;
+}
+.el-pagination button {
+  border-radius: var(--radius-btn) !important;
+}
+.el-pager li {
+  border-radius: var(--radius-btn) !important;
+}
+.el-pager li.is-active {
+  background: var(--brand) !important;
+}
+
+/* 消息框 */
+.el-message-box {
+  border-radius: var(--radius-dialog) !important;
+  box-shadow: var(--shadow-dialog) !important;
+}
+
+/* 面包屑 */
+.el-breadcrumb__inner {
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+}
+.el-breadcrumb__inner.is-link:hover {
+  color: var(--brand) !important;
+}
+
+/* 空状态 */
+.el-empty__description p {
+  color: var(--text-secondary) !important;
+}
+
+/* 加载 */
+.el-loading-mask {
+  background: rgba(255,255,255,0.8) !important;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* 数字等宽 */
+.num {
+  font-variant-numeric: tabular-nums;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+}
